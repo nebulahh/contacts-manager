@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 70%;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list {
+  margin-top: 7rem;
+  position: relative;
+}
+
+.contact-list li {
+    background-color: bisque;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 1px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-list li > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 976px) {
+  header {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  header {
+    width: 90%;
+    height: auto;
+  }
+
+  .contact-list {
+    margin-top: 7rem;
+  }
+}
+
+@media screen and (max-width: 547px) {
+  .contact-list {
+    margin-top: 10rem;
+  }
+}
+
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    display: none;
+  }
+
+  label {
+    color: inherit;
+    font-size: inherit;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  
+  input {
+    font: 1em sans-serif;
+    /* width: 300px; */
+    box-sizing: border-box;
+    border: 1px solid #999;
+  }
+  
+  input:focus {
+    border-color: #000;
+  }
+
+  .button {
+    padding-left: 90px; 
+    margin: 10px auto;
+  }
+  
+  button {
+    margin-left: .5em;
+    padding: 10px;
+    border: none;
+  }
+
+  h5 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon {
+    cursor: pointer;
+  }
