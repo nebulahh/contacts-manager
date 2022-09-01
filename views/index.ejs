@@ -7,18 +7,9 @@
     <title>Contacts Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head> -->
 <body>
 
     <section class="container">
@@ -26,31 +17,33 @@
             <h1>Contact Manager</h1>
             <div class="add-contact">
                 <a href="#" class="btn-floating btn-small waves-effect waves-light black">
-                <!-- <a href="/stories/add" class="btn-small waves-effect waves-light red"> -->
                 <i class="icon fas fa-plus"></i>
                 </a>
               </div>
         </header>
 
-        <!-- <div class="form"> -->
             <form action="addContact" method="POST">
                 <ul>
+                   
                     <li>
                         <label for="name">
                             <i class="fa-solid fa-user" aria-hidden="true"></i>
                         </label>
-                        <input type="text" id="name" name="name" required>
+    
+                        <input type="text" class="ui" id="name" name="name" required>
                       </li>
                       <li>
                         <label for="number">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                         </label>
+                      
                         <input type="tel" name="telNum" id="user_phone" maxlength="11" minlength="10" required>
                       </li>
                       <li>
                         <label for="mail">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </label>
+                     
                         <input type="email" id="mail" name="email" required>
                       </li>
                       <li class="button">
@@ -59,77 +52,29 @@
                       </li>                      
                 </ul>
             </form>
-        <!-- </div> -->
-
+        
         <ul class="contact-list">
-            <% for (let i = 0; i < person.length; i++) {%>
+    
+            <% for (let i = 0; i < people.length; i++) {%>
                 <li>
                  <div>
-                    <h5><%=person[i].name%></h5>
+                    <h5><%=people[i].name%></h5>
                     <div>
-                        <i id="<%= person[i]._id %>" class="edit fa-solid fa-pen-to-square icon"></i>
-                        <i class="fa-solid fa-delete-left icon" aria-hidden="true"></i>
+                        <a class="editBtn" href="/editContact/<%= people[i]._id %>">
+                            <i class="edit fa-solid fa-pen-to-square icon"></i>
+                        </a>
+                        <i
+                          id="<%= people[i]._id %>" 
+                          class="fa-solid deleteBtn fa-delete-left icon" aria-hidden="true"></i>
                     </div>
                  </div>
-                    <p>Phone number: <%= person[i].telNum %> </p>
-                    <p>Email: <%= person[i].email %> </p>
+                    <p>Phone number: <%= people[i].telNum %> </p>
+                    <p>Email: <%= people[i].email %> </p>
                 </li>
                 <% } %> 
         </ul>
-
-
-        <!-- <form action="addContact" method="POST">
-           
-            <ul>
-                <li>
-                    <label for="name">
-                        <i class="fa-solid fa-user" aria-hidden="true"></i>
-                    </label>
-                    <input type="text" id="name" value=""  name="name" required>
-                  </li>
-                  <li>
-                    <label for="number">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </label>
-                    <input type="tel" name="telNum" id="user_phone" maxlength="11" minlength="10" required>
-                  </li>
-                  <li>
-                    <label for="mail">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </label>
-                    <input type="email" id="mail" name="email" required>
-                  </li>
-                  <li class="button">
-                    <button id="discard" class="waves-effect waves-light red" type="submit">Cancel</button>
-                    <button type="submit">Save</button>
-                  </li>    
-            </ul>
-          
-        </form> -->
+ 
     </section>
-    <!-- <h1>Todo List: </h1>
-    <ul class="todoItems">
-    % for(let i=0; i < contacts.length; i++) {%>
-        <li class="item">
-            % if(contacts[i].completed === true) {%>
-                <span class='completed'>%= contacts[i].thing %></span>
-            % }else{ %>
-                <span>%= contacts[i].thing %></span>
-            % } %   
-            <span class='fa fa-trash'></span>
-        </li>
-    % } %
-    </ul>
-
-    <h2>Left to do: %= left %></h2>
-
-    <h2>Add A Todo:</h2>
-
-    <form action="/addTodo" method="POST">
-        <input type="text" placeholder="Thing To Do" name="todoItem">
-        <input type="submit">
-    </form>
-     -->
 
     <script src='js/main.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
